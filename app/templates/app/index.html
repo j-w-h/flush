@@ -1,0 +1,116 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>Flush</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="{% static 'app/css/framework7.ios.min.css' %}">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="{% static 'app/css/framework7.ios.colors.min.css' %}">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href= "{% static 'app/css/flush.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/font-awesome.min.css' %}">
+  </head>
+  <body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Hoya toilet user info</p>
+      </div>
+    </div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            
+            <div class="left">
+              <!-- 
+                Right link contains only icon - additional "icon-only" class
+                Additional "open-panel" class tells app to open panel when we click on this link
+              -->
+              <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+            </div>
+            <div class="center sliding">Flush</div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content -->
+            <div class="page-content">
+<!--               <p>Toilet content goes here</p> -->
+              <!-- Link to another page -->
+<!--               <a href="about">About app</a>
+              <a href="deeper">Deeper</a> -->
+<!--               <div class="list-block">
+                <ul>
+                  {% for building in buildings %}
+                    <li>
+                      <a href="#" class="item-link item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">{{building.building_name}}</div>
+                          <div class="item-after"><span class="badge">1</span></div>
+                        </div>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+                <div class="list-block-label">List block label text goes here</div>
+              </div>   -->
+
+              <div class="content-block-title">Buildings</div>
+              <div class="list-block media-list">
+                <ul>
+                  {% for building in buildings %}
+                    <li>
+                      <a href="building_detail/{{building.url}}" class="item-link item-content">
+                        <div class="item-media"><img src="{{building.picture_url}}" width="44"></div>
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">{{building.name}}</div>
+                          </div>
+                          <div class="item-subtitle">Test Text</div>
+                        </div>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        <div class="toolbar" id="bottom-toolbar">
+          <div class="toolbar-inner">
+            <!-- Toolbar links -->
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="{% static 'app/js/libs/jquery-2.2.0.min.js' %}"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="{% static 'app/js/libs/framework7.min.js' %}"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="{% static 'app/js/layout.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+{% load staticfiles %}
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="bathroom-back">
+        <i class="icon icon-back"></i>
+        <span>Back</span>
+       </a>
+    </div>
+    <div class="center sliding">{{bathroom.name}}</div>
+<!--     <div class="right">
+      <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+    </div> -->
+  </div>
+</div>
+<div class="pages">
+
+<div data-page="bathroom_detail" class="page toolbar-fixed" id="bathroom-detail-page" bath-url="{{bathroom.url}}">
+  <!-- messagebar -->
+  <div class="toolbar messagebar" id="bathroom-details-message">
+    <div class="toolbar-inner">
+      <textarea placeholder="New Comment" id="new-comment-textarea" maxlength="150"></textarea><a href="#" class="link" id="add-comment">Send</a>
+    </div>
+  </div>
+  <!-- messages-content -->
+  <div class="page-content">
+
+    <div id="bathroom-details-header">
+
+    </div>
+
+    <div id="comment-holder">
+      {% for comment in comments %}
+        <div class="card">
+          <div class="card-content">
+            <div class="card-content-inner">
+              <div class="card-content-left">{{comment.comment_text}}</div>
+              <div class="card-content-right">
+                <i class="fa fa-angle-up"></i>
+                <span class="comment-votes">18</span>
+                <i class="fa fa-angle-down"></i>
+              </div>
+            </div>
+            <div class="card-content-bottom">
+              <span class="footer-text">ayooo</span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+</div>

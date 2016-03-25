@@ -1,0 +1,80 @@
+#bathroom-details-message{
+	border-top: 1px solid #007aff;
+}
+
+#bathroom-details-header{
+	border-bottom: 1px solid #007aff;
+	height: 40vh;
+	/*background-color: rgb(255, 255, 255);*/
+	z-index: 1000;
+}
+
+/*.card-content{
+	display: inline;
+}*/
+
+.col-md-3{
+	border: 1px solid red;
+	/*width: 75%;*/
+}
+
+.col-md-9{
+	border: 1px solid blue;
+	/*width: 75%;*/
+}
+
+.row{
+	border: 1px solid green;
+}
+
+.card-content{
+    /*height: 100px;*/
+}
+
+.card-content-inner{
+	padding-bottom: 0px !important;
+}
+
+.card-content-left{
+    width: 80vw;
+    display: table-cell;
+}
+
+.card-content-right{
+    width: 20vw;
+    /*border: 1px solid red;*/
+    display: table-cell;
+    text-align: center;
+}
+
+.card-content-right .fa{
+	display: block !important;
+	margin-right: -15%;
+}
+
+.comment-votes{
+	margin-left: 10px;
+}
+
+.card-content-bottom{
+    height: 20px;
+    padding: 15px;
+    padding-top: 10px;
+}
+
+/*
+.comment-rating{
+	width: 15%;
+	text-align: center;
+	display: block;
+	padding-right: 20px !important;
+	padding-top: 15px !important;
+}
+
+.card-table{
+	height: 75px !important;
+}
+
+.comment-text{
+	width: 100%;
+}*/
